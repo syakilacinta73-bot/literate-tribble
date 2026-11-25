@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Makanan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HALAMAN LOGIN -->
+    <div id="loginPage" class="login-container">
+        <div class="login-box">
+            <h1>🍔 Food Store</h1>
+            <p>Silakan Login Terlebih Dahulu</p>
+
+            <form id="loginForm">
+                <input type="text" id="username"
+                    placeholder="Username" required>
+
+                <input type="password" id="password"
+                    placeholder="Password" required>
+
+                <button type="submit">Login</button>
+                <p id="loginMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- HALAMAN UTAMA -->
+    <div id="mainPage" class="hidden">
+
+        <header>
+            <h2>🍔 FOOD STORE</h2>
+            <div>
+                <span id="welcomeUser"></span>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <nav>
+            <button onclick="showSection('dashboard')">Dashboard</button>
+            <button onclick="showSection('makanan')">Data Makanan</button>
+            <button onclick="showSection('pengguna')">Data Pengguna</button>
+        </nav>
+
+        <main>
+
+            <!-- DASHBOARD -->
+            <section id="dashboard">
+                <h2>Dashboard</h2>
+
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Makanan</h3>
+                        <h1 id="totalMakanan">0</h1>
+                    </div>
+
+                    <div class="card">
+                        <h3>Total Pengguna</h3>
+                        <h1 id="totalPengguna">0</h1>
+                    </div>
+                </div>
+
+                <h3>Selamat Datang di Food Store!</h3>
+                <p>Website manajemen toko makanan.</p>
+            </section>
+
+            <!-- DATA MAKANAN -->
+            <section id="makanan" class="hidden">
+                <h2>Data Makanan</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Makanan</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                        </tr>
+                    </thead>
+                    <tbody id="foodTable"></tbody>
+                </table>
+            </section>
+
+            <!-- DATA PENGGUNA -->
+            <section id="pengguna" class="hidden">
+                <h2>Data Pengguna</h2>
+
+                <div id="adminArea">
+                    <h3>Tambah Pengguna</h3>
+
+                    <form id="userForm">
+                        <input type="text" id="newName"
+                            placeholder="Nama pengguna" required>
+
+                        <input type="text" id="newUsername"
+                            placeholder="Username" required>
+
+                        <input type="password" id="newPassword"
+                            placeholder="Password" required>
+
+                        <select id="newRole">
+                            <option value="Pengguna">Pengguna</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+
+                        <button type="submit">Tambah Pengguna</button>
+                    </form>
+                </div>
+
+                <h3>Daftar Pengguna</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="userTable"></tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Makanan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HALAMAN LOGIN -->
+    <div id="loginPage" class="login-container">
+        <div class="login-box">
+            <h1>🍔 Food Store</h1>
+            <p>Silakan Login Terlebih Dahulu</p>
+
+            <form id="loginForm">
+                <input type="text" id="username"
+                    placeholder="Username" required>
+
+                <input type="password" id="password"
+                    placeholder="Password" required>
+
+                <button type="submit">Login</button>
+                <p id="loginMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- HALAMAN UTAMA -->
+    <div id="mainPage" class="hidden">
+
+        <header>
+            <h2>🍔 FOOD STORE</h2>
+            <div>
+                <span id="welcomeUser"></span>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <nav>
+            <button onclick="showSection('dashboard')">Dashboard</button>
+            <button onclick="showSection('makanan')">Data Makanan</button>
+            <button onclick="showSection('pengguna')">Data Pengguna</button>
+        </nav>
+
+        <main>
+
+            <!-- DASHBOARD -->
+            <section id="dashboard">
+                <h2>Dashboard</h2>
+
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Makanan</h3>
+                        <h1 id="totalMakanan">0</h1>
+                    </div>
+
+                    <div class="card">
+                        <h3>Total Pengguna</h3>
+                        <h1 id="totalPengguna">0</h1>
+                    </div>
+                </div>
+
+                <h3>Selamat Datang di Food Store!</h3>
+                <p>Website manajemen toko makanan.</p>
+            </section>
+
+            <!-- DATA MAKANAN -->
+            <section id="makanan" class="hidden">
+                <h2>Data Makanan</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Makanan</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                        </tr>
+                    </thead>
+                    <tbody id="foodTable"></tbody>
+                </table>
+            </section>
+
+            <!-- DATA PENGGUNA -->
+            <section id="pengguna" class="hidden">
+                <h2>Data Pengguna</h2>
+
+                <div id="adminArea">
+                    <h3>Tambah Pengguna</h3>
+
+                    <form id="userForm">
+                        <input type="text" id="newName"
+                            placeholder="Nama pengguna" required>
+
+                        <input type="text" id="newUsername"
+                            placeholder="Username" required>
+
+                        <input type="password" id="newPassword"
+                            placeholder="Password" required>
+
+                        <select id="newRole">
+                            <option value="Pengguna">Pengguna</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+
+                        <button type="submit">Tambah Pengguna</button>
+                    </form>
+                </div>
+
+                <h3>Daftar Pengguna</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="userTable"></tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
